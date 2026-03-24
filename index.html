@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jade Properties Group — Premium Transitional Housing in Omaha</title>
+  <meta name="description" content="Jade Properties Group provides curated, turnkey transitional residences for affluent families relocating or building in the Omaha area. A sanctuary of comfort and elevated living.">
+  <meta name="keywords" content="luxury rental Omaha, transitional housing Omaha, premium rental homes, executive housing Omaha, furnished homes Omaha">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jade Properties Group — Premium Transitional Housing">
+  <meta property="og:description" content="Curated, turnkey residences for families in transition. Omaha, Nebraska.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jadepropertiesgroup.com">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Jade Properties Group",
+    "description": "Premium transitional housing for affluent families relocating or building in Omaha, Nebraska.",
+    "url": "https://jadepropertiesgroup.com",
+    "email": "leasing@jadepropertiesgroup.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Omaha",
+      "addressRegion": "NE",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Omaha"
+    }
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --jade: #2B4C3F;
+      --jade-dark: #1e3830;
+      --jade-light: #3a6455;
+      --brass: #C5A880;
+      --brass-light: #d4bc9a;
+      --brass-dim: rgba(197,168,128,0.15);
+      --slate: #1A2530;
+      --cream: #F5F5F2;
+      --cream-dark: #eaeae5;
+      --muted: #7a7a72;
+      --border: rgba(43,76,63,0.10);
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      color: var(--slate);
+      background: var(--cream);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+    .section { padding: 120px 0; }
+
+    @media (max-width: 768px) {
+      .section { padding: 80px 0; }
+      .container { padding: 0 24px; }
+    }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--jade); transition: box-shadow 0.3s ease;
+    }
+    .nav.scrolled { box-shadow: 0 1px 0 rgba(197,168,128,0.15), 0 3px 16px rgba(0,0,0,0.2); }
+
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px; max-width: 1120px; margin: 0 auto; padding: 0 32px;
+    }
+
+    .nav-brand { display: flex; flex-direction: column; gap: 2px; }
+    .nav-brand-name {
+      font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600;
+      color: var(--cream); letter-spacing: 4px; line-height: 1;
+    }
+    .nav-brand-sub {
+      font-family: 'DM Sans', sans-serif; font-size: 8.5px; font-weight: 400;
+      color: var(--brass); letter-spacing: 3px; text-transform: uppercase; line-height: 1;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+    .nav-links a {
+      font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400;
+      color: rgba(245,245,242,0.6); letter-spacing: 1px; text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover, .nav-links a:focus { color: var(--cream); }
+    .nav-links .nav-cta {
+      color: var(--slate); background: var(--brass); padding: 8px 20px;
+      border-radius: 4px; font-weight: 500; letter-spacing: 0.5px; transition: background 0.15s ease;
+    }
+    .nav-links .nav-cta:hover { background: var(--brass-light); }
+
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--cream); margin: 5px 0; transition: all 0.25s ease; }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 5px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); }
+
+    @media (max-width: 768px) {
+      .nav-inner { padding: 0 24px; }
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none; position: absolute; top: 72px; left: 0; right: 0;
+        background: var(--jade-dark); flex-direction: column; gap: 0; padding: 16px 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a { display: block; padding: 14px 24px; font-size: 13px; }
+      .nav-links .nav-cta { margin: 8px 24px; text-align: center; border-radius: 4px; }
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--jade); padding: 200px 0 160px;
+      position: relative; overflow: hidden;
+    }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--brass); }
+
+    .hero-content { max-width: 720px; }
+    .hero-eyebrow {
+      font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+      color: var(--brass); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 28px;
+    }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 56px); color: var(--cream); margin-bottom: 28px; font-weight: 400; line-height: 1.2; }
+    .hero-description { font-size: 17px; color: rgba(245,245,242,0.65); line-height: 1.8; max-width: 560px; margin-bottom: 48px; }
+    .hero-cta {
+      display: inline-block; background: var(--brass); color: var(--slate);
+      padding: 14px 36px; font-family: 'DM Sans', sans-serif; font-size: 12px;
+      font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+      border-radius: 4px; transition: background 0.15s ease;
+    }
+    .hero-cta:hover { background: var(--brass-light); }
+
+    .hero-ornament {
+      position: absolute; right: -40px; top: 50%; transform: translateY(-50%);
+      width: 400px; height: 400px; border: 1px solid rgba(197,168,128,0.08); border-radius: 50%;
+    }
+    .hero-ornament::before {
+      content: ''; position: absolute; inset: 40px;
+      border: 1px solid rgba(197,168,128,0.06); border-radius: 50%;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 140px 0 100px; }
+      .hero-ornament { display: none; }
+    }
+
+    /* ABOUT */
+    .about { background: var(--cream); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+
+    .section-eyebrow {
+      font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+      color: var(--brass); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 20px;
+    }
+    .section-heading { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 40px); color: var(--slate); margin-bottom: 32px; line-height: 1.2; }
+    .section-text { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 20px; }
+
+    .about-image-placeholder {
+      width: 100%; aspect-ratio: 4/5; background: var(--jade); border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .about-image-placeholder::before { content: ''; position: absolute; inset: 24px; border: 1px solid rgba(197,168,128,0.12); border-radius: 2px; }
+    .placeholder-mark { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 600; color: rgba(197,168,128,0.15); letter-spacing: 6px; }
+
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-image-placeholder { aspect-ratio: 3/2; order: -1; }
+    }
+
+    /* APPROACH */
+    .approach { background: var(--jade); position: relative; }
+    .approach::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--brass); }
+    .approach::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--brass); }
+    .approach .section-heading { color: var(--cream); max-width: 640px; margin-bottom: 72px; }
+
+    .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+    .approach-number { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 500; color: rgba(197,168,128,0.25); line-height: 1; margin-bottom: 20px; }
+    .approach-card h3 { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; color: var(--cream); letter-spacing: 0.5px; margin-bottom: 14px; }
+    .approach-card p { font-size: 14px; color: rgba(245,245,242,0.5); line-height: 1.7; }
+    .approach-divider { width: 32px; height: 1px; background: var(--brass); margin-bottom: 20px; }
+
+    @media (max-width: 768px) { .approach-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+    /* PROPERTIES */
+    .properties { background: var(--cream); }
+    .properties-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; }
+
+    .property-card {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      background: white; border-radius: 4px; overflow: hidden; border: 1px solid var(--border);
+    }
+    .property-image {
+      background: var(--jade); min-height: 400px; display: flex;
+      align-items: center; justify-content: center; position: relative; overflow: hidden;
+    }
+    .property-image::before { content: ''; position: absolute; inset: 20px; border: 1px solid rgba(197,168,128,0.1); }
+    .property-image .placeholder-mark { font-size: 60px; }
+
+    .property-details { padding: 48px; display: flex; flex-direction: column; justify-content: center; }
+    .property-badge {
+      display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500;
+      color: var(--brass); letter-spacing: 2px; text-transform: uppercase;
+      background: var(--brass-dim); padding: 4px 12px; border-radius: 4px; margin-bottom: 20px; align-self: flex-start;
+    }
+    .property-name { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--slate); margin-bottom: 8px; }
+    .property-location { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+
+    .property-features { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 32px; margin-bottom: 32px; }
+    .property-feature { font-size: 13px; color: var(--slate); display: flex; align-items: center; gap: 10px; }
+    .property-feature::before { content: ''; width: 4px; height: 4px; background: var(--brass); border-radius: 50%; flex-shrink: 0; }
+
+    .property-cta {
+      display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500;
+      color: var(--jade); letter-spacing: 1px; text-transform: uppercase;
+      border: 1px solid var(--jade); padding: 12px 28px; border-radius: 4px;
+      transition: all 0.15s ease; align-self: flex-start;
+    }
+    .property-cta:hover { background: var(--jade); color: var(--cream); }
+
+    @media (max-width: 768px) {
+      .properties-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .property-card { grid-template-columns: 1fr; }
+      .property-image { min-height: 240px; }
+      .property-details { padding: 32px 24px; }
+    }
+
+    /* PULLQUOTE */
+    .pullquote { background: var(--jade-dark); padding: 100px 0; text-align: center; }
+    .pullquote-text {
+      font-family: 'Playfair Display', serif; font-size: clamp(22px, 3vw, 32px);
+      font-weight: 400; font-style: italic; color: var(--cream);
+      max-width: 680px; margin: 0 auto 24px; line-height: 1.5;
+    }
+    .pullquote-brass { width: 40px; height: 1px; background: var(--brass); margin: 0 auto 32px; }
+    .pullquote-attribution {
+      font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400;
+      color: var(--brass); letter-spacing: 2px; text-transform: uppercase;
+    }
+
+    /* CONTACT */
+    .contact { background: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+
+    .contact-item { margin-bottom: 32px; }
+    .contact-label {
+      font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500;
+      color: var(--brass); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;
+    }
+    .contact-value { font-size: 16px; color: var(--slate); }
+    .contact-value a { transition: color 0.15s ease; }
+    .contact-value a:hover { color: var(--jade-light); }
+
+    .contact-form { display: flex; flex-direction: column; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; }
+    .form-group label {
+      font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500;
+      color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px;
+    }
+    .form-group input, .form-group textarea {
+      font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300;
+      color: var(--slate); background: white; border: 1px solid var(--border);
+      border-radius: 4px; padding: 12px 16px;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease; outline: none;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: var(--brass); box-shadow: 0 0 0 3px rgba(197,168,128,0.15);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    .form-submit {
+      display: inline-block; background: var(--brass); color: var(--slate);
+      padding: 14px 36px; font-family: 'DM Sans', sans-serif; font-size: 12px;
+      font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
+      border: none; border-radius: 4px; cursor: pointer;
+      transition: background 0.15s ease; align-self: flex-start;
+    }
+    .form-submit:hover { background: var(--brass-light); }
+
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    /* FOOTER */
+    .footer { background: var(--jade); padding: 64px 0 48px; position: relative; }
+    .footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--brass); }
+
+    .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 48px; }
+
+    .footer-brand { display: flex; flex-direction: column; gap: 2px; }
+    .footer-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--cream); letter-spacing: 4px; line-height: 1; }
+    .footer-brand-sub { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 400; color: var(--brass); letter-spacing: 3px; text-transform: uppercase; }
+    .footer-tagline { font-size: 13px; color: rgba(245,245,242,0.4); margin-top: 16px; max-width: 280px; }
+
+    .footer-links { display: flex; gap: 48px; }
+    .footer-col h4 {
+      font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500;
+      color: var(--brass); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a { font-size: 13px; color: rgba(245,245,242,0.5); transition: color 0.15s ease; }
+    .footer-col a:hover { color: var(--cream); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(197,168,128,0.1); padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copyright { font-size: 12px; color: rgba(245,245,242,0.3); }
+    .footer-legal { font-size: 12px; color: rgba(245,245,242,0.3); }
+
+    @media (max-width: 768px) {
+      .footer-inner { flex-direction: column; gap: 40px; }
+      .footer-links { flex-direction: column; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+
+    /* ANIMATIONS */
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+      .fade-in.visible { opacity: 1; transform: translateY(0); }
+      .fade-in-delay-1 { transition-delay: 0.1s; }
+      .fade-in-delay-2 { transition-delay: 0.2s; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand" aria-label="Jade Properties Group - Home">
+        <span class="nav-brand-name">JADE</span>
+        <span class="nav-brand-sub">Properties Group</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#properties">Residences</a></li>
+        <li><a href="#contact" class="nav-cta">Inquire</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Premium Transitional Housing</p>
+        <h1>Your sanctuary between<br>what was and what's next.</h1>
+        <p class="hero-description">Jade Properties Group provides curated, turnkey residences for families building or relocating in the Omaha area. Every detail considered. Every transition seamless.</p>
+        <a href="#contact" class="hero-cta">Schedule a Consultation</a>
+      </div>
+    </div>
+    <div class="hero-ornament" aria-hidden="true"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text fade-in">
+          <p class="section-eyebrow">About</p>
+          <h2 class="section-heading">A different standard in transitional living.</h2>
+          <p class="section-text">Jade Properties Group was founded on a simple observation: families in transition deserve more than a temporary compromise. When you're building your dream home or relocating for an opportunity, the last thing you need is a residence that feels like a stopgap.</p>
+          <p class="section-text">We maintain a deliberately small portfolio of premium homes in Omaha's most desirable neighborhoods. Each property is selected for its quality, thoughtfully prepared, and managed with the same care you'd expect from a five-star concierge — because transitional doesn't have to mean temporary in quality.</p>
+          <p class="section-text">Led by Bradly Goodner, our approach is hands-on and detail-oriented. One point of contact. One standard of excellence. Every residence, every resident, every time.</p>
+        </div>
+        <div class="about-image-placeholder fade-in fade-in-delay-1" aria-hidden="true">
+          <span class="placeholder-mark">J</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="approach section" id="approach">
+    <div class="container">
+      <p class="section-eyebrow">Our Approach</p>
+      <h2 class="section-heading">Elevated at every stage.</h2>
+      <div class="approach-grid">
+        <div class="approach-card fade-in">
+          <div class="approach-number">01</div>
+          <div class="approach-divider"></div>
+          <h3>Curated Properties</h3>
+          <p>We don't list hundreds of homes. We select a handful of exceptional residences in established neighborhoods — homes with the finishes, space, and character that match the way you're accustomed to living.</p>
+        </div>
+        <div class="approach-card fade-in fade-in-delay-1">
+          <div class="approach-number">02</div>
+          <div class="approach-divider"></div>
+          <h3>Turnkey Move-In</h3>
+          <p>Every property is move-in ready with premium appliances, maintained systems, and a comprehensive welcome experience. A personalized packet with every detail — from access codes to utility contacts — so nothing is left to chance.</p>
+        </div>
+        <div class="approach-card fade-in fade-in-delay-2">
+          <div class="approach-number">03</div>
+          <div class="approach-divider"></div>
+          <h3>Dedicated Management</h3>
+          <p>One point of contact for everything. Maintenance requests handled promptly. Communication that's responsive, professional, and never automated where a human touch matters. Your experience is our reputation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPERTIES -->
+  <section class="properties section" id="properties">
+    <div class="container">
+      <div class="properties-header">
+        <div class="properties-header-text fade-in">
+          <p class="section-eyebrow">Residences</p>
+          <h2 class="section-heading">Currently available.</h2>
+        </div>
+      </div>
+      <div class="property-card fade-in">
+        <div class="property-image">
+          <span class="placeholder-mark">J</span>
+        </div>
+        <div class="property-details">
+          <span class="property-badge">Now Available</span>
+          <h3 class="property-name">The Spring Ridge Residence</h3>
+          <p class="property-location">Omaha, Nebraska — Spring Ridge</p>
+          <div class="property-features">
+            <span class="property-feature">4 Bedrooms</span>
+            <span class="property-feature">Single-Family Home</span>
+            <span class="property-feature">2-Car Garage</span>
+            <span class="property-feature">Established Neighborhood</span>
+            <span class="property-feature">Premium Appliances</span>
+            <span class="property-feature">Move-In Ready</span>
+          </div>
+          <a href="#contact" class="property-cta">Inquire About This Residence</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULLQUOTE -->
+  <section class="pullquote">
+    <div class="container">
+      <div class="pullquote-brass"></div>
+      <p class="pullquote-text fade-in">"Transitional housing should feel like coming home — not like waiting for one."</p>
+      <p class="pullquote-attribution fade-in fade-in-delay-1">Bradly Goodner, Principal</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info fade-in">
+          <p class="section-eyebrow">Contact</p>
+          <h2 class="section-heading">Let's start a conversation.</h2>
+          <p class="section-text" style="margin-bottom: 40px;">Whether you're exploring options for an upcoming relocation or building project, we'd welcome the opportunity to discuss how Jade Properties Group can make your transition seamless.</p>
+          <div class="contact-item">
+            <p class="contact-label">Email</p>
+            <p class="contact-value"><a href="mailto:leasing@jadepropertiesgroup.com">leasing@jadepropertiesgroup.com</a></p>
+          </div>
+          <div class="contact-item">
+            <p class="contact-label">Location</p>
+            <p class="contact-value">Omaha, Nebraska</p>
+          </div>
+          <div class="contact-item">
+            <p class="contact-label">Response Time</p>
+            <p class="contact-value">Within one business day</p>
+          </div>
+        </div>
+        <form class="contact-form fade-in fade-in-delay-1" id="contactForm" action="https://formsubmit.co/leasing@jadepropertiesgroup.com" method="POST">
+          <input type="hidden" name="_subject" value="Website Inquiry — Jade Properties Group">
+          <input type="hidden" name="_template" value="box">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://jadepropertiesgroup.com#contact">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="first_name" required autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="last_name" required autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="timeline">When are you looking to move?</label>
+            <input type="text" id="timeline" name="timeline" placeholder="e.g., April 2026, flexible, etc.">
+          </div>
+          <div class="form-group">
+            <label for="message">Tell us about your situation</label>
+            <textarea id="message" name="message" placeholder="Building a home, relocating for work, or something else — we'd love to hear about your needs."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Inquiry</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">
+            <span class="footer-brand-name">JADE</span>
+            <span class="footer-brand-sub">Properties Group</span>
+          </div>
+          <p class="footer-tagline">Premium transitional housing for families in the Omaha area. Every detail considered.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#approach">Our Approach</a></li>
+              <li><a href="#properties">Residences</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="mailto:leasing@jadepropertiesgroup.com">Email Us</a></li>
+              <li><a href="#">Omaha, Nebraska</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Jade Properties Group. All rights reserved.</p>
+        <p class="footer-legal"><a href="#">Fair Housing</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 10); }, { passive: true });
+
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

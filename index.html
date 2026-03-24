@@ -224,10 +224,14 @@
       background: var(--jade); min-height: 400px; display: flex;
       align-items: center; justify-content: center; position: relative; overflow: hidden;
     }
+    .property-image img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
     .property-image::before { content: ''; position: absolute; inset: 20px; border: 1px solid rgba(197,168,128,0.1); }
     .property-image .placeholder-mark { font-size: 60px; }
 
     .property-details { padding: 48px; display: flex; flex-direction: column; justify-content: center; }
+    .property-badge.leased {
+      color: var(--muted); background: rgba(122,122,114,0.12);
+    }
     .property-badge {
       display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500;
       color: var(--brass); letter-spacing: 2px; text-transform: uppercase;
@@ -447,10 +451,10 @@
       </div>
       <div class="property-card fade-in">
         <div class="property-image">
-          <span class="placeholder-mark">J</span>
+          <img src="/property-1307.jpg" alt="The Spring Ridge Residence - 1307 S 175th Ave, Omaha NE" loading="lazy">
         </div>
         <div class="property-details">
-          <span class="property-badge">Now Available</span>
+          <span class="property-badge" id="prop-1-badge" data-property-id="1">Now Available</span>
           <h3 class="property-name">The Spring Ridge Residence</h3>
           <p class="property-location">Omaha, Nebraska — Spring Ridge</p>
           <div class="property-features">
@@ -599,6 +603,40 @@
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Dynamic property availability
+    (async function() {
+      try {
+        const res = await fetch('/api/property-status');
+        if (!res.ok) return;
+        const data = await res.json();
+        if (!data.properties) return;
+
+        data.properties.forEach(prop => {
+          const badge = document.querySelector(`[data-property-id="${prop.id}"]`);
+          if (!badge) return;
+
+          if (prop.available) {
+            badge.textContent = 'Now Available';
+            badge.classList.remove('leased');
+          } else {
+            badge.textContent = 'Currently Leased';
+            badge.classList.add('leased');
+
+            // Also update the CTA button
+            const card = badge.closest('.property-card');
+            if (card) {
+              const cta = card.querySelector('.property-cta');
+              if (cta) {
+                cta.textContent = 'Join Our Waitlist';
+              }
+            }
+          }
+        });
+      } catch (e) {
+        // Silently fail — badge stays at default "Now Available"
+      }
+    })();
   </script>
 </body>
 </html>
